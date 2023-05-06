@@ -1,7 +1,7 @@
 from setuptools import setup
 
 setup(
-    name="bp-query-builder",
+    name="py-query-builder",
     version="0.1",
     description="A simple query builder for Python written with ChatGPT4",
     author="Antonio Gallo",
