@@ -1,6 +1,11 @@
 # QueryBuilder
 
+## What is it
 QueryBuilder is a Python library for building SQL queries programmatically. It provides a simple and intuitive interface for creating and executing SQL queries, and supports common operations like SELECT, INSERT, UPDATE, and DELETE.
+
+## Why
+I am not a python developer, so I've asked chatgpt4 to develop a query builder.
+After 3 days that the credit expired and I had to wait that it reset, after many frustration I dediced to take it over and finish it.
 
 ## Installation
 
@@ -35,8 +40,8 @@ data = db.table('test t1').left_join('test2 t2', 't1.id=t2.id2') \
 
 For more information on how to use QueryBuilder, please see the test.py
 
-Contributing
+# Contributing
 If you'd like to contribute to QueryBuilder, please fork the repository and make a pull request. All contributions are welcome!
 
-License
+# License
 QueryBuilder is licensed under the GPLv3 License. See LICENSE for more information.
