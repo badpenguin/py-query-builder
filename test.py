@@ -16,9 +16,9 @@ def test_query_builder():
     print('- Affected rows: ', db.row_count())
     print('- Last insert ID: ', db.last_insert_id())
 
-    # Insert (DUPLICATE)
-    #sql = db.table('test').insert({"id": 2, "name": "Alice"}, True)
-    #print('- Duplicate (MySQL only): ', sql.build_query(), sql.debug_params())
+    # TODO: Insert (DUPLICATE) - supported by mysql only
+    # sql = db.table('test').insert({"id": 2, "name": "Alice"}, True)
+    # print('- Duplicate (MySQL only): ', sql.build_query(), sql.debug_params())
 
     # Update
     sql = db.table('test').update({"name": "Antonio"}).where('id = :id', {'id': 2})
@@ -69,7 +69,19 @@ def test_query_builder():
     data = sql.fetch_all()
     print('- all: ', data)
 
-    # RIGHT + FULL JOIN are not supported by memory
+    # TODO: RIGHT + FULL JOIN are not supported by memory
+
+    # Delete Full
+    sql = db.table('test2').delete()
+    print('- Delete: ', sql.build_query(), sql.debug_params())
+    sql.run()
+    print('- Affected rows: ', db.row_count())
+
+    # Delete Full
+    sql = db.table('test').delete().where('id=2')
+    print('- Delete: ', sql.build_query(), sql.debug_params())
+    sql.run()
+    print('- Affected rows: ', db.row_count())
 
     # Done
     db.close()

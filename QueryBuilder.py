@@ -337,7 +337,7 @@ class QueryBuilder:
             self._params.update(self._query_data)
             query = query + f" {self._table} SET {set_clause}"
         elif self._query_type == 'DELETE':
-            query = f" FROM {self._table}"
+            query = query + f" FROM {self._table}"
         else:
             raise ValueError("Unsopported query type")
 
